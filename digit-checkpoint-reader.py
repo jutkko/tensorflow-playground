@@ -36,6 +36,8 @@ checkpoint_dir = os.path.dirname(checkpoint_path)
 latest = tf.train.latest_checkpoint(checkpoint_dir)
 
 model.load_weights(latest)
+
+model.save('training_1/my_model')
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 print('Test accuracy:', test_acc)
